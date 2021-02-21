@@ -14,6 +14,6 @@ const Hero = (props) => {
   return content;
 };
 Hero.propTypes = {
-  titleText: PropTypes.nodeisRequired,
+  titleText: PropTypes.node.isRequired,
 };
 export default Hero;
