@@ -7,7 +7,7 @@ const Hero = (props) => {
   const content = (
     <header className={styles.component}>
       <h2 className={styles.title}>{ReactHtmlParser(props.titleText)}</h2>
-      <img className={styles.image} src={props.backgroundImage} />
+      <img className={styles.image} src={props.image} />
     </header>
   );
 
