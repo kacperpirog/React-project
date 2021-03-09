@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./App.scss";
-import PropTypes from "prop-types";
-import List from "../List/ListContainer.js";
-import Search from "../Search/SearchContainer.js";
+import React from 'react';
+import styles from './App.scss';
+import PropTypes from 'prop-types';
+import List from '../List/ListContainer.js';
+import Search from '../Search/SearchContainer.js';
 //import Card from '../Card/Card.js';
 //import Creator from '../Creator/Creator.js';
 

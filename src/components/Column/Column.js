@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./Column.scss";
-import PropTypes from "prop-types";
-import Card from "../Card/Card.js";
-import Icon from "../Icon/Icon";
-import { settings } from "../../data/dataStore";
-import Creator from "../Creator/Creator";
+import React from 'react';
+import styles from './Column.scss';
+import PropTypes from 'prop-types';
+import Card from '../Card/Card.js';
+import Icon from '../Icon/Icon';
+import { settings } from '../../data/dataStore';
+import Creator from '../Creator/Creator';
 
 class Column extends React.Component {
   static propTypes = {
