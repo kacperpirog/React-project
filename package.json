@@ -6,15 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "lint": "eslint src/"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.js": "eslint"
+    "lint": "eslint src/",
+    "server": "http-server dist/"
   },
   "keywords": [],
   "author": "",
@@ -23,11 +16,10 @@
     "http-server": "^0.12.3",
     "prop-types": "^15.7.2",
     "react": "^16.7.0",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.7.0",
     "react-html-parser": "^2.0.2",
     "react-redux": "^7.0.1",
-    "react-router-dom": "^5.0.0",
-    "react-router-transition": "^1.4.0",
     "redux": "^4.0.1",
     "shortid": "^2.2.16"
   },
@@ -39,13 +31,12 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
-    "eslint": "^7.19.0",
+    "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^5.0.9",
+    "husky": "^5.1.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
-    "redux-devtools-extension": "^2.13.8",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
