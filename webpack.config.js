@@ -4,17 +4,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const baseConfig = () => ({
-  entry: "./src/index.js",
+  entry: "./src/index.js", //main app code
   output: {
-    path: path.join(__dirname, "dist"),
-    publicPath: "/",
+    path: path.join(__dirname, "dist"), //prod version destination
     filename: "scripts_bundle.js",
-  },
-  devServer: {
-    historyApiFallback: true,
   },
   module: {
     rules: [
+      //config for files
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -25,6 +22,7 @@ const baseConfig = () => ({
     ],
   },
   plugins: [
+    //necessary plugins
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
