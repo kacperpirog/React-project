@@ -1,11 +1,12 @@
-import React from 'react';
-import styles from './List.scss';
-import Hero from '../Hero/Hero';
-import Column from '../Column/ColumnContainer';
-import PropTypes from 'prop-types';
-import { settings } from '../../data/dataStore';
-import ReactHtmlParser from 'react-html-parser';
-import Creator from '../Creator/Creator';
+import React from "react";
+import styles from "./List.scss";
+import Hero from "../Hero/Hero";
+import Column from "../Column/ColumnContainer";
+import PropTypes from "prop-types";
+import { settings } from "../../data/dataStore";
+import ReactHtmlParser from "react-html-parser";
+import Creator from "../Creator/Creator";
+import Container from "../Container/Container";
 
 class List extends React.Component {
   static propTypes = {
@@ -36,6 +37,7 @@ class List extends React.Component {
         <div className={styles.creator}>
           <Creator text={settings.columnCreatorText} action={addColumn} />
         </div>
+        <Container />
       </section>
     );
   }
