@@ -8,6 +8,10 @@ const baseConfig = () => ({
   output: {
     path: path.join(__dirname, "dist"), //prod version destination
     filename: "scripts_bundle.js",
+    publicPath: "/",
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
