@@ -12,6 +12,7 @@ export const getCardsForSearchResults = (state, searchString) =>
         state.lists.filter(list => {
           if (column.listId == list.id) {
             card.listTitle = list.title;
+            card.listId = list.id;
           }
         });
       }

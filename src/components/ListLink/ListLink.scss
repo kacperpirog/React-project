@@ -1,4 +1,4 @@
-@import "../../styles/settings.scss";
+@import '../../styles/settings.scss';
 
 .link {
   text-decoration: none;
@@ -10,7 +10,7 @@
   display: flex;
   margin-bottom: $base-size;
   border-radius: $radius;
-  box-shadow: 0 ($base-size / 4) 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 ($base-size / 4) 0 rgba(0,0,0,0.3);
 }
 
 .text {

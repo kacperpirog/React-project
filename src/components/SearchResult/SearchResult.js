@@ -3,45 +3,38 @@ import PropTypes from 'prop-types';
 import styles from './SearchResult.scss';
 import ReactHtmlParser from 'react-html-parser';
 import Container from '../Container/Container';
+import { Link } from 'react-router-dom';
 
-
-const SearchResult = (props) => {
-  const { cards } = props;
-
-  const highlightClickedCard = (id, target, cards) => {
-    const card = document.getElementById(id);
-    const getHref = target.getAttribute('href').replace('#', '');
-
-    if (getHref == id) {
-      card.classList.toggle(styles.cardActive);
-    }
-
-    for (let card of cards) {
-      const cardDom = document.getElementById(card.id);
-      if (card.id != id) {
-        cardDom.classList.remove(styles.cardActive);
-      }
-    }
+class SearchResult extends React.Component {
+  static propTypes = {
+    cards: PropTypes.array,
+    changeSearchString: PropTypes.func,
+    history: PropTypes.any,
   };
 
-  return (
-    <Container>
-      <div className={styles.component}>
-        {cards.map(cardData => (
-          <a href={'#' + cardData.id} key={cardData.id} className={styles.card} onClick={(event) => highlightClickedCard(cardData.id, event.currentTarget, cards)}>
-            <p className={styles.subtitle}>List: {ReactHtmlParser(cardData.listTitle)}</p>
-            <p className={styles.subtitle}>Column: {cardData.columnTitle}</p>
-            <h3 className={styles.title}>{cardData.title}</h3>
-          </a>
-        ))}
-      </div>
-    </Container>
-  );
-};
+  state = {
+    searchString: this.props.changeSearchString(this.props.history.location.pathname.replace('/search/', '')),
+  }
 
-SearchResult.propTypes = {
-  cards: PropTypes.array,
-};
+  render() {
+    const { cards } = this.props;
+    return (
+      <Container>
+        <div className={styles.component}>
+          {cards.map(cardData => (
+            <Link className={styles.card} key={cardData.id} to={`/list/${cardData.listId}`} >
+              <div>
+                <p className={styles.subtitle}>List: {ReactHtmlParser(cardData.listTitle)}</p>
+                <p className={styles.subtitle}>Column: {cardData.columnTitle}</p>
+                <h3 className={styles.title}>{cardData.title}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Container>
+    );
+  }
+}
 
 
 export default SearchResult;
