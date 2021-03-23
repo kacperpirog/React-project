@@ -1,6 +1,9 @@
 export const settings = {
   columnCreatorText: 'Add new column',
   cardCreatorText: 'Add new card',
+  listCreatorText: 'Add new list',
+  defaultListDescription: '<p>I can do all the things!!!</p>',
+  defaultColumnIcon: 'list-alt',
   creator: {
     buttonOK: 'OK',
     buttonCancel: 'Cancel',
@@ -10,8 +13,9 @@ export const settings = {
     defaultText: 'Search...',
     icon: 'search',
   },
-  defaultListDescription: '<p>I can do all the things!!!</p>',
-  defaultColumnIcon: 'list-alt',
+  header: {
+    icon: 'paw',
+  },
 };
 
 export const pageContents = {
@@ -100,12 +104,6 @@ const columns = [
     title: 'Games',
     icon: 'gamepad',
   },
-  {
-    id: 'column-4',
-    listId: 'list-2',
-    title: 'Strange column',
-    icon: 'question',
-  },
 ];
 
 const cards = [
@@ -113,39 +111,57 @@ const cards = [
     id: 'card-1',
     columnId: 'column-1',
     title: 'This Is Going to Hurt',
+    index: 0,
   },
   {
     id: 'card-2',
     columnId: 'column-1',
     title: 'Interpreter of Maladies',
+    index: 1,
   },
   {
     id: 'card-3',
     columnId: 'column-2',
     title: 'Harry Potter',
+    index: 0,
   },
   {
     id: 'card-4',
     columnId: 'column-2',
     title: 'Star Wars',
+    index: 1,
   },
   {
     id: 'card-5',
     columnId: 'column-3',
     title: 'The Witcher',
+    index: 0,
   },
   {
     id: 'card-6',
     columnId: 'column-3',
     title: 'Skyrim',
+    index: 1,
   },
 ];
 
 const initialStoreData = {
-  app: { ...pageContents },
+  app: {...pageContents},
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],
+};
+
+export const info = {
+  title: 'Informations',
+  img: 'https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  description: 'All the informations you need.',
+};
+
+export const faq = {
+  title: 'Frequently asked questions',
+  img: 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?cs=srgb&dl=pexels-pixabay-356079.jpg&fm=jpg',
+  description: '<b>Can i move cards?</b> Yes, just click on card you want to move and drag in the place you want.',
 };
 
 export default initialStoreData;

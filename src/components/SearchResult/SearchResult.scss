@@ -1,0 +1,39 @@
+@import "../../styles/settings.scss";
+
+.component {
+  background: $color-light;
+  border-radius: 5px;
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card{
+    padding: 15px;
+    border: 1px solid $color-lightgrey;
+    margin: 5px 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-decoration: none;
+    color: black;
+    
+    &:hover{
+      background: $color-lightgrey;
+      color: $color-light;
+      transition: all 0.5s;
+    }
+
+    .subtitle{
+      margin: 5px 0;
+      text-align: center;
+    }
+
+    .title{
+      text-align: center;
+    }
+  }
+}
+
+.cardActive {
+  background: $color-success;
+}

@@ -1,5 +1,10 @@
 import React from 'react';
-// eslint-disable-next-line react/prop-types
-const Icon = (props) => <i className={`fas fa-${props.name}`}></i>;
+import PropTypes from 'prop-types';
+
+const Icon = props => (<i className={`fas fa-${props.name}`}></i>);
+
+Icon.propTypes = {
+  name: PropTypes.string,
+};
 
 export default Icon;
